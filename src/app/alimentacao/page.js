@@ -1,11 +1,7 @@
 import NavBar from "@/components/NavBar";
 import DataRow from "./DataRow";
+import { getRefeicao } from "@/actions/contas";
 
-async function getRefeicao() {
-  const url = "http://localhost:8080/api/v1/alimentacao"
-  const resp = await fetch(url, { next: { revalidate: 0 } })
-  return resp.json()
-}
 
 export default async function Alimentacao() {
   const refeicao = await getRefeicao()
