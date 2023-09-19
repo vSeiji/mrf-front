@@ -3,8 +3,6 @@ import DataRow from "./DataRow";
 import { getRefeicao } from "@/actions/contas";
 
 export default async function Alimentacao() {
-  let refeicao = await getRefeicao()
-  refeicao = refeicao._embedded.entityModelList
     return (
       <>
         <NavBar active={"alimentacao"}/>
