@@ -2,8 +2,7 @@ import NavBar from "@/components/NavBar";
 import DataRow from "./DataRow";
 import { getRefeicao, getRefeicoes } from "@/actions/refeicao";
 import Button from '@/components/Button';
-import { PlusIcon, CakeIcon } from '@heroicons/react/24/solid';
-import DropMenu from "@/components/DropMenu";
+import { PlusIcon } from '@heroicons/react/24/solid';
 
 export default async function Alimentacao() {
   let refeicao = await getRefeicoes()

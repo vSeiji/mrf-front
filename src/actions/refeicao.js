@@ -65,7 +65,7 @@ export async function update(refeicao){
 
     const options = {
         method: "PUT",
-        body: JSON.stringify( conta ),
+        body: JSON.stringify( refeicao ),
         headers: {
             "Content-Type": "application/json"
         }

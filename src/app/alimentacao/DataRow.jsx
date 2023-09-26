@@ -1,3 +1,5 @@
+import DropMenu from "@/components/DropMenu";
+
 export default function DataRow ({refeicao}) {
     return (
         <div id="data-row" className="bg-orange-200 rounded flex justify-between 
@@ -9,6 +11,7 @@ export default function DataRow ({refeicao}) {
           <div id="desc" className="text-x flex flex-col">
             <span>{refeicao.refeicao}</span>
             <span>{refeicao.calorias}</span>
+            <DropMenu refeicaoId={refeicao.id}></DropMenu>
           </div>
         </div>
     )
