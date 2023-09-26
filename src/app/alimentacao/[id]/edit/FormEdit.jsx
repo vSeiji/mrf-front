@@ -1,5 +1,5 @@
 "use client"
-import { create, update } from "@/actions/refeicaos";
+import { create, update } from "@/actions/refeicao";
 import Button from "@/components/Button";
 import InputText from "@/components/InputText";
 import { CheckIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
@@ -31,24 +31,24 @@ export default function FormEdit({refeicao}) {
     }
 
     return (
-        <main className="bg-slate-900 mt-20 m-auto p-12 rounded max-w-lg">
-            <h2 className="text-2xl text-slate-100">Editar refeicao</h2>
+        <main className="bg-amber-50 mt-20 m-auto p-12 rounded max-w-lg">
+            <h2 className="text-2xl text-black">Editar refeicao</h2>
 
             <form action={handleSubmit} className="flex flex-col gap-4">
                 <InputText
-                    label="nome"
-                    id="nome"
-                    name="nome"
-                    value={refeicaoEdit.nome}
-                    onChange={(e) => handleFieldEdit("nome", e.target.value)}
+                    label="Refeição"
+                    id="refeicao"
+                    name="refeicao"
+                    value={refeicaoEdit.refeicao}
+                    onChange={(e) => handleFieldEdit("refeicao", e.target.value)}
                 />
 
                 <InputText
-                    label="ícone"
-                    id="icone"
-                    name="icone"
-                    value={refeicaoEdit.icone}
-                    onChange={(e) => handleFieldEdit("icone", e.target.value)}
+                    label="Dia"
+                    id="dia"
+                    name="dia"
+                    value={refeicaoEdit.dia}
+                    onChange={(e) => handleFieldEdit("dia", e.target.value)}
                 />
 
                 <div className="flex justify-around">

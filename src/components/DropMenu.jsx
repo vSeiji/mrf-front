@@ -37,7 +37,7 @@ export default function DropMenu({ refeicaoId }) {
 
   const handleEdit = () => {
     setAnchorEl(null);
-    push(`/contas/${refeicaoId}/edit`)
+    push(`/alimentacao/${refeicaoId}/edit`)
   }
 
   const handleDelete = async () => {
@@ -88,7 +88,9 @@ export default function DropMenu({ refeicaoId }) {
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
-              <AlertDialogTitle>Tem certeza que quer apagar essa conta?</AlertDialogTitle>
+              <AlertDialogTitle>
+                Tem certeza que quer apagar ?
+              </AlertDialogTitle>
               <AlertDialogDescription>
                 Essa ação não pode ser desfeita. Todos os dados da conta serão perdidos.
               </AlertDialogDescription>

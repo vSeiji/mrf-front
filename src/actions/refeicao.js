@@ -34,7 +34,7 @@ export async function getRefeicoes() {
 //-----------------------------------------------------------------------------------------
 export async function destroy(id){
 
-    const urlDelete = url + "/" + id
+    const urlDelete = url + "/alimentacao/refeicoes" + id
 
     const options = {
         method: "DELETE"
@@ -50,7 +50,7 @@ export async function destroy(id){
 }
 //-----------------------------------------------------------------------------------------
 export async function getRefeicao(id){
-    const getUrl = url + "/" + id
+    const getUrl = url + "/v1/alimentacao/refeicoes/" + id
 
     const resp = await fetch(getUrl)
 
@@ -61,7 +61,7 @@ export async function getRefeicao(id){
 }
 //-----------------------------------------------------------------------------------------
 export async function update(refeicao){
-    const updateUrl = url + "/" + refeicao.id
+    const updateUrl = url + "/v1/alimentacao/refeicoes/" + refeicao.id
 
     const options = {
         method: "PUT",
