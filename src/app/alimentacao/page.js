@@ -20,7 +20,7 @@ export default async function Alimentacao() {
           </div>
           
           <div id="data">
-            {(refeicao).map((refeicao) => <DataRow key={refeicao.user.id} refeicao={refeicao}/>)}
+            {refeicao?.map((refeicao) => <DataRow key={refeicao.user.id} refeicao={refeicao}/>)}
           </div>
         </main>
       </>

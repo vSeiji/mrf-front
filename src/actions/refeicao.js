@@ -1,17 +1,21 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
+import { cookies } from "next/headers"
 
 const url = process.env.NEXT_PUBLIC_BASE_URL + "/v1/alimentacao"
 
 //-----------------------------------------------------------------------------------------
 export async function create(formData){
 
+    const token = cookies().get('mrf_token')
+
     const options = {
         method: "POST",
         body: JSON.stringify( Object.fromEntries(formData) ),
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token.value}`
         }
     }
 
@@ -28,7 +32,20 @@ export async function create(formData){
 }
 //-----------------------------------------------------------------------------------------
 export async function getRefeicoes() {
-    const resp = await fetch(url)
+
+    const token = cookies().get('mrf_token')
+
+    const options = {
+        headers: {
+            "Authorization": `Bearer ${token.value}`
+        }
+    }
+
+    const resp = await fetch(url, options)
+
+    if (resp.status !== 200) 
+        console.log(resp)
+
     return resp.json()
   }
 //-----------------------------------------------------------------------------------------
